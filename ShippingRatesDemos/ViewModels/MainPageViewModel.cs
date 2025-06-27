@@ -1,5 +1,7 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Shippo;
+using Shippo.Models.Components;
 namespace ShippingRatesDemos.PageModels
 {
     public partial class MainPageViewModel : ObservableObject
@@ -16,25 +18,50 @@ namespace ShippingRatesDemos.PageModels
         [ObservableProperty]
         private string _today = DateTime.Now.ToString("dddd, MMM d");
 
+        private readonly ShippoSDK _sdk;
+
+        [ObservableProperty]
+        Address address;
         public MainPageViewModel()
         {
-        }
+            string apiKeyHeader = Environment.GetEnvironmentVariable("SHIPPO_API_KEY");
+            if (string.IsNullOrWhiteSpace(apiKeyHeader))
+            {
+                //Display alert informing the user that the API key is not set as enviroment variable
+            }
+            else
+            {
+                _sdk = new ShippoSDK(
+                    apiKeyHeader: Environment.GetEnvironmentVariable("SHIPPO_API_KEY")!, // clave TEST
+                    shippoApiVersion: "201802-08");
+            }
 
+
+        }
         private async Task LoadData()
         {
             try
             {
-                IsBusy = true;        
+                IsBusy = true;
+                Address address = await _sdk.Addresses.CreateAsync(
+                                new AddressCreateRequest()
+                                {
+                                    Name = "Shawn Ippotle",
+                                    Company = "Shippo",
+                                    Street1 = "215 Clayton St.",
+                                    City = "San Francisco",
+                                    State = "CA",
+                                    Zip = "94117",
+                                    Country = "US",
+                                    Phone = "+1 555 341 9393",
+                                    Email = "shippotle@shippo.com",
+                                }
+                                    );
             }
             finally
             {
                 IsBusy = false;
             }
-        }
-
-        private async Task InitData()
-        {
-            await Refresh();
         }
 
         [RelayCommand]
