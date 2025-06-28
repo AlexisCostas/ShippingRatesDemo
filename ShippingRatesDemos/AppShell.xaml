@@ -15,10 +15,9 @@
         Route="main" />
 
     <ShellContent
-        Title="Create Address"
-        Icon="{StaticResource IconAddress}"
+        Route="CreateAddressPage"
         ContentTemplate="{DataTemplate pages:CreateAddressPage}"
-        Route="CreateAddressPage" />
+        FlyoutItemIsVisible	="False"/>
     
     <Shell.FlyoutFooter>
         <Grid Padding="15">
