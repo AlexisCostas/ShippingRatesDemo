@@ -7,26 +7,30 @@
              xmlns:i18n="clr-namespace:ShippingRatesDemos.Resources.Translates"  
              xmlns:sf="clr-namespace:Syncfusion.Maui.Toolkit.SegmentedControl;assembly=Syncfusion.Maui.Toolkit"  
              Title="{x:Static i18n:AppResources.AppTitle}">  
-    <ContentPage.Content>  
-        <VerticalStackLayout Padding="30" Spacing="20">  
-            <Label Text="{x:Static i18n:AppResources.AppDesc}" />  
-            <Button Text="{x:Static i18n:AppResources.BtnCreateAddress}"  
-                    Command="{Binding GoToCreateAddressCommand}" />  
-            <Button Text="{x:Static i18n:AppResources.BtnRates}"  
+    <ContentPage.Content>
+        <Grid RowDefinitions="Auto, *">
+            <VerticalStackLayout Padding="30" Spacing="20">
+                <Label Text="{x:Static i18n:AppResources.AppDesc}" />
+                <Button Text="{x:Static i18n:AppResources.BtnCreateAddress}"  
+                    Command="{Binding GoToCreateAddressCommand}" />
+                <Button Text="{x:Static i18n:AppResources.BtnRates}"  
                     Command="{Binding GoToRatesCommand}"  
-                    IsEnabled="{Binding HasAddress}" />  
-            <Grid Padding="15">  
+                    IsEnabled="{Binding HasAddress}" />
+            </VerticalStackLayout>
+            <Grid Grid.Row="1">
                 <sf:SfSegmentedControl x:Name="ThemeSegmentedControl"  
-                                       VerticalOptions="Center" HorizontalOptions="Center" SelectionChanged="SfSegmentedControl_SelectionChanged"  
-                                       SegmentWidth="40" SegmentHeight="40">  
-                    <sf:SfSegmentedControl.ItemsSource>  
-                        <x:Array Type="{x:Type sf:SfSegmentItem}">  
-                            <sf:SfSegmentItem ImageSource="{StaticResource IconLight}"/>  
-                            <sf:SfSegmentItem ImageSource="{StaticResource IconDark}"/>  
-                        </x:Array>  
-                    </sf:SfSegmentedControl.ItemsSource>  
-                </sf:SfSegmentedControl>  
-            </Grid>  
-        </VerticalStackLayout>  
+                                       VerticalOptions="End" HorizontalOptions="End" SelectionChanged="SfSegmentedControl_SelectionChanged"  
+                                       SegmentWidth="40" SegmentHeight="40"
+                                       Margin="0,0,24,24">
+                    <sf:SfSegmentedControl.ItemsSource>
+                        <x:Array Type="{x:Type sf:SfSegmentItem}">
+                            <sf:SfSegmentItem ImageSource="{StaticResource IconLight}"/>
+                            <sf:SfSegmentItem ImageSource="{StaticResource IconDark}"/>
+                        </x:Array>
+                    </sf:SfSegmentedControl.ItemsSource>
+                </sf:SfSegmentedControl>
+            </Grid>
+        </Grid>
+
     </ContentPage.Content>  
 </ContentPage>
