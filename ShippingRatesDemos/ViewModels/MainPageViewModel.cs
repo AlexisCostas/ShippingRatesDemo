@@ -105,7 +105,8 @@ namespace ShippingRatesDemos.ViewModels
             }
         }
 
-        private Task NavigateToCreateAddress()
-        => Shell.Current.GoToAsync("CreateAddress");
+        [RelayCommand]
+        private async Task GoToCreateAddressAsync()
+        => await Shell.Current.GoToAsync("//CreateAddressPage");
     }
 }
