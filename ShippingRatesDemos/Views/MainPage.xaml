@@ -3,15 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:pullToRefresh="clr-namespace:Syncfusion.Maui.Toolkit.PullToRefresh;assembly=Syncfusion.Maui.Toolkit"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             x:Class="ShippingRatesDemos.Pages.MainPage"
-             xmlns:resx="clr-namespace:ShippingRatesDemos.Resources.Translates"
-             Title="{x:Static resx:AppResources.AppTitle}">
+             x:Class="ShippingRatesDemos.Views.MainPage"
+             xmlns:i18n="clr-namespace:ShippingRatesDemos.Resources.Translates"
+             Title="{x:Static i18n:AppResources.AppTitle}">
     <ContentPage.Content>
         <VerticalStackLayout Padding="30" Spacing="20">
-            <Label Text="{x:Static resx:AppResources.AppDesc}" />
-            <Button Text="{x:Static resx:AppResources.BtnCreateAddress}"
+            <Label Text="{x:Static i18n:AppResources.AppDesc}" />
+            <Button Text="{x:Static i18n:AppResources.BtnCreateAddress}"
             Command="{Binding GoToCreateAddressCommand}" />
-            <Button Text="{x:Static resx:AppResources.BtnRates}"
+            <Button Text="{x:Static i18n:AppResources.BtnRates}"
             Command="{Binding GoToRatesCommand}"
             IsEnabled="{Binding HasAddress}" />
         </VerticalStackLayout>

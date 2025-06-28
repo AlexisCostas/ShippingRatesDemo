@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShippingRatesDemos.Views.CreateAddressPage"
+             xmlns:i18n="clr-namespace:ShippingRatesDemos.Resources.Translates"
+             Title="CreateAddressPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <VerticalStackLayout Padding="20" Spacing="10">
+                
+                <Label LineBreakMode="WordWrap"
+                       Text="{x:Static i18n:AppResources.CreateAddressDesc}" />
+
+                <!-- Campos -->
+                <Entry Placeholder="Name"      Text="{Binding Name}" />
+                <Entry Placeholder="Company"   Text="{Binding Company}" />
+                <Entry Placeholder="Street"    Text="{Binding Street1}" />
+                <Entry Placeholder="City"      Text="{Binding City}" />
+                <Entry Placeholder="State"     Text="{Binding State}" />
+                <Entry Placeholder="ZIP"       Text="{Binding Zip}" Keyboard="Numeric"/>
+                <Entry Placeholder="Country"   Text="{Binding Country}" />
+                <Entry Placeholder="Phone"     Text="{Binding Phone}" Keyboard="Telephone"/>
+                <Entry Placeholder="Email"     Text="{Binding Email}" Keyboard="Email" />
+
+                <!-- Botones -->
+                <HorizontalStackLayout Spacing="15">
+                    <Button Text="{x:Static i18n:AppResources.BtnAutofill}"
+                            Command="{Binding AutofillCommand}" />
+                    <Button Text="{x:Static i18n:AppResources.BtnCreateAddress}"
+                            Command="{Binding CreateCommand}"/>
+                </HorizontalStackLayout>
+
+                <ActivityIndicator IsRunning="{Binding IsBusy}"
+                                   IsVisible="{Binding IsBusy}" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

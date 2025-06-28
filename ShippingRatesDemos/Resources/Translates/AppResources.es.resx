@@ -123,10 +123,22 @@
   <data name="AppTitle" xml:space="preserve">
     <value>Demo de Tarifas de Envío</value>
   </data>
+  <data name="BtnAutofill" xml:space="preserve">
+    <value>Autocompletar</value>
+  </data>
   <data name="BtnCreateAddress" xml:space="preserve">
-    <value>Crear dirección</value>
+    <value>Crear</value>
+  </data>
+  <data name="BtnNavToCreateAddress" xml:space="preserve">
+    <value>Ir a crear dirección</value>
   </data>
   <data name="BtnRates" xml:space="preserve">
     <value>Cotizar tarifas</value>
+  </data>
+  <data name="CreateAddressDesc" xml:space="preserve">
+    <value>Completa el formulario para crear una dirección en el modo Test de Shippo.</value>
+  </data>
+  <data name="PageCreateAddressTitle" xml:space="preserve">
+    <value>Crear dirección</value>
   </data>
 </root>

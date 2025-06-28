@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using ShippingRatesDemos.ViewModels;
 using Syncfusion.Maui.Toolkit.Hosting;
 
 namespace ShippingRatesDemos
@@ -32,6 +33,8 @@ namespace ShippingRatesDemos
     		builder.Services.AddLogging(configure => configure.AddDebug());
 #endif
             builder.Services.AddSingleton<MainPageViewModel>();
+
+            builder.Services.AddSingleton<CreateAddressPageViewModel>();
 
             return builder.Build();
         }

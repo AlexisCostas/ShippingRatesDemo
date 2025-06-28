@@ -79,11 +79,29 @@ namespace ShippingRatesDemos.Resources.Translates {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create address.
+        ///   Looks up a localized string similar to Autofill sample.
+        /// </summary>
+        internal static string BtnAutofill {
+            get {
+                return ResourceManager.GetString("BtnAutofill", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create.
         /// </summary>
         internal static string BtnCreateAddress {
             get {
                 return ResourceManager.GetString("BtnCreateAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Go to create address.
+        /// </summary>
+        internal static string BtnNavToCreateAddress {
+            get {
+                return ResourceManager.GetString("BtnNavToCreateAddress", resourceCulture);
             }
         }
         
@@ -93,6 +111,24 @@ namespace ShippingRatesDemos.Resources.Translates {
         internal static string BtnRates {
             get {
                 return ResourceManager.GetString("BtnRates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fill the form below to create an address in Shippo Test Mode..
+        /// </summary>
+        internal static string CreateAddressDesc {
+            get {
+                return ResourceManager.GetString("CreateAddressDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Address.
+        /// </summary>
+        internal static string PageCreateAddressTitle {
+            get {
+                return ResourceManager.GetString("PageCreateAddressTitle", resourceCulture);
             }
         }
     }

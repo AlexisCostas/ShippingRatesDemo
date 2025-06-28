@@ -2,7 +2,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Shippo;
 using Shippo.Models.Components;
-namespace ShippingRatesDemos.PageModels
+namespace ShippingRatesDemos.ViewModels
 {
     public partial class MainPageViewModel : ObservableObject
     {
@@ -18,7 +18,7 @@ namespace ShippingRatesDemos.PageModels
         [ObservableProperty]
         private string _today = DateTime.Now.ToString("dddd, MMM d");
 
-        private readonly ShippoSDK _sdk;
+        private readonly ShippoSDK sdk;
 
         [ObservableProperty]
         Address address;
@@ -31,19 +31,17 @@ namespace ShippingRatesDemos.PageModels
             }
             else
             {
-                _sdk = new ShippoSDK(
+                sdk = new ShippoSDK(
                     apiKeyHeader: Environment.GetEnvironmentVariable("SHIPPO_API_KEY")!, // clave TEST
                     shippoApiVersion: "201802-08");
             }
-
-
         }
         private async Task LoadData()
         {
             try
             {
                 IsBusy = true;
-                Address address = await _sdk.Addresses.CreateAsync(
+                Address address = await sdk.Addresses.CreateAsync(
                                 new AddressCreateRequest()
                                 {
                                     Name = "Shawn Ippotle",
@@ -107,5 +105,7 @@ namespace ShippingRatesDemos.PageModels
             }
         }
 
+        private Task NavigateToCreateAddress()
+        => Shell.Current.GoToAsync("CreateAddress");
     }
 }

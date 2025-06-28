@@ -124,10 +124,22 @@
   <data name="AppTitle" xml:space="preserve">
     <value>Shipping Rates Demo</value>
   </data>
+  <data name="BtnAutofill" xml:space="preserve">
+    <value>Autofill sample</value>
+  </data>
   <data name="BtnCreateAddress" xml:space="preserve">
-    <value>Create address</value>
+    <value>Create</value>
+  </data>
+  <data name="BtnNavToCreateAddress" xml:space="preserve">
+    <value>Go to create address</value>
   </data>
   <data name="BtnRates" xml:space="preserve">
     <value>Quote rates</value>
+  </data>
+  <data name="CreateAddressDesc" xml:space="preserve">
+    <value>Fill the form below to create an address in Shippo Test Mode.</value>
+  </data>
+  <data name="PageCreateAddressTitle" xml:space="preserve">
+    <value>Create Address</value>
   </data>
 </root>

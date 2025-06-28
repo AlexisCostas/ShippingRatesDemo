@@ -1,6 +1,6 @@
-﻿using ShippingRatesDemos.PageModels;
+﻿using ShippingRatesDemos.ViewModels;
 
-namespace ShippingRatesDemos.Pages
+namespace ShippingRatesDemos.Views
 {
     public partial class MainPage : ContentPage
     {
