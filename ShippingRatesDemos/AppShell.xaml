@@ -6,10 +6,11 @@
     xmlns:sf="clr-namespace:Syncfusion.Maui.Toolkit.SegmentedControl;assembly=Syncfusion.Maui.Toolkit"
     xmlns:pages="clr-namespace:ShippingRatesDemos.Views"
     Shell.FlyoutBehavior="Flyout"
+    xmlns:i18n="clr-namespace:ShippingRatesDemos.Resources.Translates"
     Title="ShippingRatesDemos">
 
     <ShellContent
-        Title="Dashboard"
+        Title="{x:Static i18n:AppResources.ShellMenuTitle}"
         Icon="{StaticResource IconDashboard}"
         ContentTemplate="{DataTemplate pages:MainPage}"
         Route="main" />

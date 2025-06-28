@@ -141,4 +141,7 @@
   <data name="PageCreateAddressTitle" xml:space="preserve">
     <value>Crear dirección</value>
   </data>
+  <data name="ShellMenuTitle" xml:space="preserve">
+    <value>Panel</value>
+  </data>
 </root>

@@ -131,5 +131,14 @@ namespace ShippingRatesDemos.Resources.Translates {
                 return ResourceManager.GetString("PageCreateAddressTitle", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dashboard.
+        /// </summary>
+        internal static string ShellMenuTitle {
+            get {
+                return ResourceManager.GetString("ShellMenuTitle", resourceCulture);
+            }
+        }
     }
 }

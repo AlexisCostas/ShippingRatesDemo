@@ -142,4 +142,7 @@
   <data name="PageCreateAddressTitle" xml:space="preserve">
     <value>Create Address</value>
   </data>
+  <data name="ShellMenuTitle" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
 </root>
