@@ -5,8 +5,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:sf="clr-namespace:Syncfusion.Maui.Toolkit.SegmentedControl;assembly=Syncfusion.Maui.Toolkit"
     xmlns:pages="clr-namespace:ShippingRatesDemos.Views"
-    Shell.FlyoutBehavior="Flyout"
     xmlns:i18n="clr-namespace:ShippingRatesDemos.Resources.Translates"
+    FlyoutBehavior="Disabled"
     Title="ShippingRatesDemos">
 
     <ShellContent
@@ -20,7 +20,7 @@
         ContentTemplate="{DataTemplate pages:CreateAddressPage}"
         FlyoutItemIsVisible	="False"/>
     
-    <Shell.FlyoutFooter>
+    <!--<Shell.FlyoutFooter>
         <Grid Padding="15">
             <sf:SfSegmentedControl x:Name="ThemeSegmentedControl" 
                 VerticalOptions="Center" HorizontalOptions="Center" SelectionChanged="SfSegmentedControl_SelectionChanged"
@@ -33,6 +33,6 @@
                 </sf:SfSegmentedControl.ItemsSource>
             </sf:SfSegmentedControl>
         </Grid>
-    </Shell.FlyoutFooter>
+    </Shell.FlyoutFooter>-->
 
 </Shell>
