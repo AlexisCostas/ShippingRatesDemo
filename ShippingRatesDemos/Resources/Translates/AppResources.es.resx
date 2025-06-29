@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AlertErrorTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="AlertOkBtn" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="AlertSuccessBodyFmt" xml:space="preserve">
+    <value>Creada dirección con ID: </value>
+  </data>
+  <data name="AlertSuccessTitle" xml:space="preserve">
+    <value>Éxito</value>
+  </data>
   <data name="AppDesc" xml:space="preserve">
     <value>Esta aplicación permite crear direcciones y cotizar tarifas con la API de Shippo (modo Test).</value>
   </data>

@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using ShippingRatesDemos.Resources.Translates;
 using Shippo;
 using Shippo.Models.Components;
 using System;
@@ -50,7 +51,7 @@ namespace ShippingRatesDemos.ViewModels
             else
             {
                 sdk = new ShippoSDK(
-                    apiKeyHeader: Environment.GetEnvironmentVariable("SHIPPO_API_KEY")!, // clave TEST
+                    apiKeyHeader: Environment.GetEnvironmentVariable("SHIPPO_API_KEY")!, // key TEST
                     shippoApiVersion: "201802-08");
             }
             InitializeFields();
@@ -118,8 +119,10 @@ namespace ShippingRatesDemos.ViewModels
 
                 var created = await sdk.Addresses.CreateAsync(req);
 
-                await Shell.Current.DisplayAlert("Success",
-                    $"Address ID: {created.ObjectId}", "OK");
+                await Shell.Current.DisplayAlert(
+                    AppResources.AlertSuccessTitle,
+                    string.Format(AppResources.AlertSuccessBodyFmt, created.ObjectId),
+                    AppResources.AlertOkBtn);
 
                 if (LastTemplateIndex is int idx && idx < templates.Count)
                 {
@@ -130,18 +133,21 @@ namespace ShippingRatesDemos.ViewModels
                     LastTemplateIndex = null;
                 }
 
-                // Guarda el id en Preferences para usarlo en RatesPage
+                // Save the ID in Preferences to use it in RatesPage
                 Preferences.Set("LastAddressId", created.ObjectId);
                 CreatedCount++;
                 Preferences.Set(CountKey, CreatedCount);
                 CanAutofill = templates.Any() && CreatedCount < MaxAddresses;
 
-                // Limpia el formulario
+                // Clear fields after successful creation
                 ClearFields();
             }
             catch (Exception ex)
             {
-                await Shell.Current.DisplayAlert("Error", ex.Message, "OK");
+                await Shell.Current.DisplayAlert(
+                    AppResources.AlertErrorTitle,
+                    ex.Message,
+                    AppResources.AlertOkBtn);
             }
             finally { IsBusy = false; }
         }

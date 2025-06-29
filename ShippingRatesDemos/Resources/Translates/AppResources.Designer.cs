@@ -61,6 +61,42 @@ namespace ShippingRatesDemos.Resources.Translates {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        internal static string AlertErrorTitle {
+            get {
+                return ResourceManager.GetString("AlertErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        internal static string AlertOkBtn {
+            get {
+                return ResourceManager.GetString("AlertOkBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ID of address created: .
+        /// </summary>
+        internal static string AlertSuccessBodyFmt {
+            get {
+                return ResourceManager.GetString("AlertSuccessBodyFmt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sucess.
+        /// </summary>
+        internal static string AlertSuccessTitle {
+            get {
+                return ResourceManager.GetString("AlertSuccessTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This app lets you create addresses and quote shipping rates using Shippo’s API (Test Mode)..
         /// </summary>
         internal static string AppDesc {
