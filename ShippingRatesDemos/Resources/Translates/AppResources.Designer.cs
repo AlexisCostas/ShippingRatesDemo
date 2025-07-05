@@ -79,7 +79,9 @@ namespace ShippingRatesDemos.Resources.Translates {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ID of address created: .
+        ///   Looks up a localized string similar to Address created!
+        ///ID: {0}
+        ///Company: {1}.
         /// </summary>
         internal static string AlertSuccessBodyFmt {
             get {

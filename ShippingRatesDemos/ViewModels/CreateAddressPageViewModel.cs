@@ -121,7 +121,9 @@ namespace ShippingRatesDemos.ViewModels
 
                 await Shell.Current.DisplayAlert(
                     AppResources.AlertSuccessTitle,
-                    string.Format(AppResources.AlertSuccessBodyFmt, created.ObjectId),
+                    string.Format(AppResources.AlertSuccessBodyFmt,
+                                    created.ObjectId,
+                                    created.Company),
                     AppResources.AlertOkBtn);
 
                 if (LastTemplateIndex is int idx && idx < templates.Count)

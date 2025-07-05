@@ -124,7 +124,9 @@
     <value>OK</value>
   </data>
   <data name="AlertSuccessBodyFmt" xml:space="preserve">
-    <value>ID of address created: </value>
+    <value>Address created!
+ID: {0}
+Company: {1}</value>
   </data>
   <data name="AlertSuccessTitle" xml:space="preserve">
     <value>Sucess</value>
