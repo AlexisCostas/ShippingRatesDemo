@@ -99,8 +99,19 @@ namespace ShippingRatesDemos.ViewModels
         private async Task CreateAsync()
         {
             if (IsBusy || CreatedCount >= MaxAddresses) return;
+
+            if (sdk == null)
+            {
+                await Shell.Current.DisplayAlert(
+                    AppResources.AlertApiKeyMissingTitle,
+                    AppResources.AlertApiKeyMissingBody,
+                    AppResources.AlertOkBtn);
+                return;
+            }
+
             try
             {
+
                 IsBusy = true;
 
 

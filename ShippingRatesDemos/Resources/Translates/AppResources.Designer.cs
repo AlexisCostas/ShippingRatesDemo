@@ -61,6 +61,24 @@ namespace ShippingRatesDemos.Resources.Translates {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Set the SHIPPO_API_KEY environment variable with your Shippo Test key before creating addresses..
+        /// </summary>
+        internal static string AlertApiKeyMissingBody {
+            get {
+                return ResourceManager.GetString("AlertApiKeyMissingBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to API Key missing.
+        /// </summary>
+        internal static string AlertApiKeyMissingTitle {
+            get {
+                return ResourceManager.GetString("AlertApiKeyMissingTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         internal static string AlertErrorTitle {
