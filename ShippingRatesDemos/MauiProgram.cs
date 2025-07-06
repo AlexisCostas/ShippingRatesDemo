@@ -1,6 +1,8 @@
 ﻿using CommunityToolkit.Maui;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using ShippingRatesDemos.ViewModels;
+using Shippo;
 using Syncfusion.Maui.Toolkit.Hosting;
 
 namespace ShippingRatesDemos
@@ -35,6 +37,13 @@ namespace ShippingRatesDemos
             builder.Services.AddSingleton<MainPageViewModel>();
 
             builder.Services.AddSingleton<CreateAddressPageViewModel>();
+            var apiKey = KeyStore.GetAsync().GetAwaiter().GetResult();
+
+            if (!string.IsNullOrWhiteSpace(apiKey))
+            {
+                builder.Services.AddSingleton<IShippoService>(_ => new ShippoService(apiKey));
+            }
+
 
             return builder.Build();
         }
