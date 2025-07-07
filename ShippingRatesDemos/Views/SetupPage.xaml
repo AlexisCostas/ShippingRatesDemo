@@ -4,7 +4,8 @@
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"  
              xmlns:sf="clr-namespace:Syncfusion.Maui.Toolkit.SegmentedControl;assembly=Syncfusion.Maui.Toolkit"
              x:Class="ShippingRatesDemos.Views.SetupPage"
-             Title="Shippo Setup">
+             xmlns:i18n="clr-namespace:ShippingRatesDemos.Resources.Translates"  
+             Title="{x:Static i18n:AppResources.SetupTitle}">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -27,15 +28,15 @@
         <VerticalStackLayout Spacing="15"
                              IsVisible="{Binding IsBusy, Converter={StaticResource Not}}">
 
-            <Label Text="Enter your Shippo Test API Key"
+            <Label Text="{x:Static i18n:AppResources.SetupLabelApiKey}"
                    FontSize="Medium"
                    FontAttributes="Bold" />
 
-            <Entry Placeholder="shippo_test_…"
+            <Entry Placeholder="{x:Static i18n:AppResources.SetupPlaceholderApiKey}"
                    Text="{Binding ApiKey}"
                    Keyboard="Text" />
 
-            <Button Text="Save"
+            <Button Text="{x:Static i18n:AppResources.SetupBtnSave}"
                     Command="{Binding SaveKeyCommand}"
                     IsEnabled="{Binding IsValidKey}" />
 

@@ -161,6 +161,18 @@ Compañía: {1}</value>
   <data name="PageCreateAddressTitle" xml:space="preserve">
     <value>Crear dirección</value>
   </data>
+  <data name="SetupBtnSave" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="SetupLabelApiKey" xml:space="preserve">
+    <value>Ingresa tu clave de prueba Shippo</value>
+  </data>
+  <data name="SetupPlaceholderApiKey" xml:space="preserve">
+    <value>shippo_test_…</value>
+  </data>
+  <data name="SetupTitle" xml:space="preserve">
+    <value>Configurar Shippo</value>
+  </data>
   <data name="ShellMenuTitle" xml:space="preserve">
     <value>Panel</value>
   </data>

@@ -189,6 +189,42 @@ namespace ShippingRatesDemos.Resources.Translates {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        internal static string SetupBtnSave {
+            get {
+                return ResourceManager.GetString("SetupBtnSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter your Shippo Test API Key.
+        /// </summary>
+        internal static string SetupLabelApiKey {
+            get {
+                return ResourceManager.GetString("SetupLabelApiKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to shippo_test_….
+        /// </summary>
+        internal static string SetupPlaceholderApiKey {
+            get {
+                return ResourceManager.GetString("SetupPlaceholderApiKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shippo Setup.
+        /// </summary>
+        internal static string SetupTitle {
+            get {
+                return ResourceManager.GetString("SetupTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dashboard.
         /// </summary>
         internal static string ShellMenuTitle {

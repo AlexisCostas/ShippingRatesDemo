@@ -162,6 +162,18 @@ Company: {1}</value>
   <data name="PageCreateAddressTitle" xml:space="preserve">
     <value>Create Address</value>
   </data>
+  <data name="SetupBtnSave" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="SetupLabelApiKey" xml:space="preserve">
+    <value>Enter your Shippo Test API Key</value>
+  </data>
+  <data name="SetupPlaceholderApiKey" xml:space="preserve">
+    <value>shippo_test_…</value>
+  </data>
+  <data name="SetupTitle" xml:space="preserve">
+    <value>Shippo Setup</value>
+  </data>
   <data name="ShellMenuTitle" xml:space="preserve">
     <value>Dashboard</value>
   </data>
