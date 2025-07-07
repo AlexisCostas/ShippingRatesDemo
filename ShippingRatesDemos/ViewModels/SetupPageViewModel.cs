@@ -13,54 +13,56 @@ namespace ShippingRatesDemos.ViewModels
 {
     public partial class SetupPageViewModel : ObservableObject
     {
-        //    // ────────────── Bindables ──────────────────────────────────────
-        //    [ObservableProperty] 
-        //    string apiKey = string.Empty;
-        //    [ObservableProperty] 
-        //    bool isBusy;
-        //    [ObservableProperty] 
-        //    bool isValidKey;
+        // ────────────── Bindables ──────────────────────────────────────
+        [ObservableProperty]
+        string apiKey = string.Empty;
+        [ObservableProperty]
+        bool isBusy;
+        [ObservableProperty]
+        bool isValidKey;
 
         public SetupPageViewModel()
         {
         }
 
-        //    // Cada vez que cambia ApiKey valida si no está vacía
-        //    partial void OnApiKeyChanged(string value) =>
-        //        IsValidKey = !string.IsNullOrWhiteSpace(value);
+        // Cada vez que cambia ApiKey valida si no está vacía
+        partial void OnApiKeyChanged(string value) =>
+            IsValidKey = !string.IsNullOrWhiteSpace(value);
 
-        //    // ────────────── Commands ───────────────────────────────────────
-        //    [RelayCommand]
-        //    private async Task SaveKeyAsync()
-        //    {
-        //        if (IsBusy) return;
+            // ────────────── Commands ───────────────────────────────────────
+            [RelayCommand]
+            private async Task SaveKeyAsync()
+            {
+                if (IsBusy) return;
 
-        //        IsBusy = true;
+                IsBusy = true;
 
-        //        try
-        //        {
-        //            // 1) Validar la clave con una llamada mínima a Shippo
-        //            var sdk = new ShippoSDK(apiKeyHeader: ApiKey,
-        //                                    shippoApiVersion: "201802-08");
+                try
+                {
+                    var sdk = new ShippoSDK(apiKeyHeader: ApiKey,
+                                            shippoApiVersion: "201802-08");
 
-        //            // 2) Guardar de forma segura
-        //            await KeyStore.SaveAsync(ApiKey);
+                    await KeyStore.SaveAsync(ApiKey);
 
-        //            // 3) Reiniciar AppShell para que el contenedor registre IShippoService
-        //            //Application.Current.MainPage = new AppShell();
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            await Shell.Current.DisplayAlert(
-        //                AppResources.AlertErrorTitle,
-        //                ex.Message,
-        //                AppResources.AlertOkBtn);
-        //        }
-        //        finally { IsBusy = false; }
-        //    }
+                    MainThread.BeginInvokeOnMainThread(() =>
+                    {
+                        var window = Application.Current?.Windows.FirstOrDefault();
+                        if (window is not null)
+                            window.Page = new AppShell();
+                    });
+            }
+                catch (Exception ex)
+                {
+                    await Shell.Current.DisplayAlert(
+                        AppResources.AlertErrorTitle,
+                        ex.Message,
+                        AppResources.AlertOkBtn);
+                }
+                finally { IsBusy = false; }
+            }
 
-        //    [RelayCommand]
-        //    private async Task GoToFaqAsync() =>
-        //     await Shell.Current.GoToAsync("//CreateAddressPage");
+        [RelayCommand]
+        private async Task GoToFaqAsync() =>
+         await Shell.Current.GoToAsync("//CreateAddressPage");
     }
 }
