@@ -2,10 +2,11 @@ namespace ShippingRatesDemos.Views;
 
 public partial class SetupPage : ContentPage
 {
-	public SetupPage()
+	public SetupPage(SetupPageViewModel model)
 	{
 		InitializeComponent();
-	}
+        BindingContext = model;
+    }
     private void SfSegmentedControl_SelectionChanged(object sender,
             Syncfusion.Maui.Toolkit.SegmentedControl.SelectionChangedEventArgs e)
     {

@@ -38,6 +38,8 @@ namespace ShippingRatesDemos
             builder.Services.AddSingleton<MainPageViewModel>();
 
             builder.Services.AddSingleton<CreateAddressPageViewModel>();
+            builder.Services.AddSingleton<SetupPageViewModel>();
+
             var apiKey = KeyStore.GetAsync().GetAwaiter().GetResult();
 
             if (!string.IsNullOrWhiteSpace(apiKey))
