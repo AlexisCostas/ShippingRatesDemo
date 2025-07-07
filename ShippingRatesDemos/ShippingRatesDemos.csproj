@@ -78,7 +78,6 @@
 
 	<ItemGroup>
 	  <Folder Include="Models\" />
-	  <Folder Include="Services\" />
 	  <Folder Include="Views\Controls\" />
 	</ItemGroup>
 
@@ -91,6 +90,9 @@
 	  <Compile Update="Views\CreateAddressPage.xaml.cs">
 	    <DependentUpon>CreateAddressPage.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Views\SetupPage.xaml.cs">
+	    <DependentUpon>SetupPage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -102,6 +104,9 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="Views\CreateAddressPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\SetupPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

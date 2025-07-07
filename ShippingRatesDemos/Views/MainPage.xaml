@@ -6,10 +6,16 @@
              x:Class="ShippingRatesDemos.Views.MainPage"  
              xmlns:i18n="clr-namespace:ShippingRatesDemos.Resources.Translates"  
              xmlns:sf="clr-namespace:Syncfusion.Maui.Toolkit.SegmentedControl;assembly=Syncfusion.Maui.Toolkit"  
-             Title="{x:Static i18n:AppResources.AppTitle}">  
+             Title="{x:Static i18n:AppResources.AppTitle}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <toolkit:InvertedBoolConverter x:Key="Not" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
         <Grid RowDefinitions="Auto, *">
-            <VerticalStackLayout Padding="30" Spacing="20">
+            <VerticalStackLayout Padding="30" Spacing="20" IsVisible="{Binding IsBusy, Converter={StaticResource Not}}">
                 <Label Text="{x:Static i18n:AppResources.AppDesc}" />
                 <Button Text="{x:Static i18n:AppResources.BtnCreateAddress}"  
                     Command="{Binding GoToCreateAddressCommand}" />
@@ -17,7 +23,7 @@
                     Command="{Binding GoToRatesCommand}"  
                     IsEnabled="{Binding HasAddress}" />
             </VerticalStackLayout>
-            <Grid Grid.Row="1">
+            <Grid Grid.Row="1" IsVisible="{Binding IsBusy, Converter={StaticResource Not}}">
                 <sf:SfSegmentedControl x:Name="ThemeSegmentedControl"  
                                        VerticalOptions="End" HorizontalOptions="End" SelectionChanged="SfSegmentedControl_SelectionChanged"  
                                        SegmentWidth="40" SegmentHeight="40"
@@ -30,6 +36,13 @@
                     </sf:SfSegmentedControl.ItemsSource>
                 </sf:SfSegmentedControl>
             </Grid>
+            <ActivityIndicator IsRunning="{Binding IsBusy}"
+                       IsVisible="{Binding IsBusy}"
+                       Grid.RowSpan="2"     
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       WidthRequest="60"
+                       HeightRequest="60"/>
         </Grid>
 
     </ContentPage.Content>  

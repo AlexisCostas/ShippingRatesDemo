@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Maui.Core;
+using ShippingRatesDemos.Services;
 using Font = Microsoft.Maui.Font;
 
 namespace ShippingRatesDemos
@@ -9,6 +10,9 @@ namespace ShippingRatesDemos
         public AppShell()
         {
             InitializeComponent();
+
+            CheckApiKeyAndNavigate();
+
         }
         public static async Task DisplaySnackbarAsync(string message)
         {
@@ -44,6 +48,13 @@ namespace ShippingRatesDemos
         private void SfSegmentedControl_SelectionChanged(object sender, Syncfusion.Maui.Toolkit.SegmentedControl.SelectionChangedEventArgs e)
         {
             Application.Current!.UserAppTheme = e.NewIndex == 0 ? AppTheme.Light : AppTheme.Dark;
+        }
+
+        private async void CheckApiKeyAndNavigate()
+        {
+            var key = await KeyStore.GetAsync();
+            await GoToAsync(key is null ? $"//{nameof(SetupPage)}"
+                                        : $"//{nameof(MainPage)}");
         }
     }
 }

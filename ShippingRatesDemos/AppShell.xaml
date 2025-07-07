@@ -18,7 +18,12 @@
         Route="CreateAddressPage"
         ContentTemplate="{DataTemplate pages:CreateAddressPage}"
         FlyoutItemIsVisible	="False"/>
-    
+
+    <ShellContent
+        Route="SetupPage"
+        ContentTemplate="{DataTemplate pages:SetupPage}"
+        FlyoutItemIsVisible	="False"/>
+
     <!--<Shell.FlyoutFooter>
         <Grid Padding="15">
             <sf:SfSegmentedControl x:Name="ThemeSegmentedControl" 

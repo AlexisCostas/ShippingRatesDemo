@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using ShippingRatesDemos.Resources.Translates;
+using ShippingRatesDemos.Services;
 using Shippo;
 using Shippo.Models.Components;
 using System;
@@ -33,27 +34,18 @@ namespace ShippingRatesDemos.ViewModels
         string email;
         [ObservableProperty] 
         bool isBusy;
-        private readonly ShippoSDK sdk;
+        private readonly IShippoService _shippo;
         private readonly List<AddressTemplate> templates = new();
         [ObservableProperty] 
         bool canAutofill;
         private const int MaxAddresses = 5;
         private const string UsedKey = "UsedTemplates";   // CSV of indices (0-4)
-        private const string CountKey = "CreatedCount";    
+        private const string CountKey = "CreatedCount";
 
-        public CreateAddressPageViewModel()
+        public CreateAddressPageViewModel(IShippoService shippo)
         {
-            string apiKeyHeader = Environment.GetEnvironmentVariable("SHIPPO_API_KEY");
-            if (string.IsNullOrWhiteSpace(apiKeyHeader))
-            {
-                //Display alert informing the user that the API key is not set as enviroment variable
-            }
-            else
-            {
-                sdk = new ShippoSDK(
-                    apiKeyHeader: Environment.GetEnvironmentVariable("SHIPPO_API_KEY")!, // key TEST
-                    shippoApiVersion: "201802-08");
-            }
+            _shippo = shippo;
+
             InitializeFields();
 
             LoadTemplates();          // <- fill the pool
@@ -100,15 +92,6 @@ namespace ShippingRatesDemos.ViewModels
         {
             if (IsBusy || CreatedCount >= MaxAddresses) return;
 
-            if (sdk == null)
-            {
-                await Shell.Current.DisplayAlert(
-                    AppResources.AlertApiKeyMissingTitle,
-                    AppResources.AlertApiKeyMissingBody,
-                    AppResources.AlertOkBtn);
-                return;
-            }
-
             try
             {
 
@@ -128,7 +111,7 @@ namespace ShippingRatesDemos.ViewModels
                     Email = Email
                 };
 
-                var created = await sdk.Addresses.CreateAsync(req);
+                var created = await _shippo.CreateAddressAsync(req);
 
                 await Shell.Current.DisplayAlert(
                     AppResources.AlertSuccessTitle,

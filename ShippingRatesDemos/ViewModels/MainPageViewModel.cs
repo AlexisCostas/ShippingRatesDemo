@@ -24,17 +24,7 @@ namespace ShippingRatesDemos.ViewModels
         Address address;
         public MainPageViewModel()
         {
-            string apiKeyHeader = Environment.GetEnvironmentVariable("SHIPPO_API_KEY");
-            if (string.IsNullOrWhiteSpace(apiKeyHeader))
-            {
-                //Display alert informing the user that the API key is not set as enviroment variable
-            }
-            else
-            {
-                sdk = new ShippoSDK(
-                    apiKeyHeader: Environment.GetEnvironmentVariable("SHIPPO_API_KEY")!, // clave TEST
-                    shippoApiVersion: "201802-08");
-            }
+            IsBusy = true;
         }
         private async Task LoadData()
         {
@@ -103,6 +93,7 @@ namespace ShippingRatesDemos.ViewModels
             {
                 await Refresh();
             }
+            IsBusy = false;
         }
 
         [RelayCommand]

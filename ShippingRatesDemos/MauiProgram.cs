@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using ShippingRatesDemos.Services;
 using ShippingRatesDemos.ViewModels;
 using Shippo;
 using Syncfusion.Maui.Toolkit.Hosting;
