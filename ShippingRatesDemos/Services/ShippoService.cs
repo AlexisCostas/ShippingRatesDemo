@@ -21,5 +21,15 @@ namespace ShippingRatesDemos.Services
 
         public Task<Address> CreateAddressAsync(AddressCreateRequest req) =>
             _sdk.Addresses.CreateAsync(req);
+
+        public async Task<Shipment> CreateShipmentAsync(ShipmentCreateRequest req)
+        {
+            return await _sdk.Shipments.CreateAsync(req);          // Rates are inside the response
+        }
+
+        public Task<IReadOnlyList<Rate>> GetRatesAsync(string shipmentId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

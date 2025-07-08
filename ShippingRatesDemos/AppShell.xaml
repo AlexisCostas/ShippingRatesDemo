@@ -24,6 +24,11 @@
         ContentTemplate="{DataTemplate pages:SetupPage}"
         FlyoutItemIsVisible	="False"/>
 
+    <ShellContent
+        Route="QuoteRatesPage"
+        ContentTemplate="{DataTemplate pages:QuoteRatesPage}"
+        FlyoutItemIsVisible	="False"/>
+
     <!--<Shell.FlyoutFooter>
         <Grid Padding="15">
             <sf:SfSegmentedControl x:Name="ThemeSegmentedControl" 

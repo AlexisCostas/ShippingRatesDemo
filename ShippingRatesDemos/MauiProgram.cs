@@ -39,6 +39,8 @@ namespace ShippingRatesDemos
 
             builder.Services.AddSingleton<CreateAddressPageViewModel>();
             builder.Services.AddSingleton<SetupPageViewModel>();
+            builder.Services.AddSingleton<QuoteRatesPageViewModel>();
+
 
             var apiKey = KeyStore.GetAsync().GetAwaiter().GetResult();
 

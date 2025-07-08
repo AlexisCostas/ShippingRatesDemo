@@ -25,7 +25,7 @@
                 <Button Text="{x:Static i18n:AppResources.BtnCreateAddress}"  
                     Command="{Binding GoToCreateAddressCommand}" />
                 <Button Text="{x:Static i18n:AppResources.BtnRates}"  
-                    Command="{Binding GoToRatesCommand}"  
+                    Command="{Binding GoToQuoteRatesCommand}"  
                     IsEnabled="{Binding HasAddress}" />
             </VerticalStackLayout>
             <Grid Grid.Row="1" IsVisible="{Binding IsBusy, Converter={StaticResource Not}}">

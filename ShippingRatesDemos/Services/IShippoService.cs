@@ -10,6 +10,8 @@ namespace ShippingRatesDemos.Services
     public interface IShippoService
     {
         Task<Address> CreateAddressAsync(AddressCreateRequest req);
-        // other calls(GetRatesAsync, BuyLabelAsync, etc.)
+
+        Task<Shipment> CreateShipmentAsync(ShipmentCreateRequest req);
+        Task<IReadOnlyList<Rate>> GetRatesAsync(string shipmentId);
     }
 }

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShippingRatesDemos.Views.QuoteRatesPage"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"  
+             Title="QuoteRatesPage">
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior
+            EventName="Appearing"
+            Command="{Binding AppearingCommand}" />
+    </ContentPage.Behaviors>
+    <Grid RowDefinitions="Auto,*">
+        <ActivityIndicator IsRunning="{Binding IsBusy}"
+                           IsVisible="{Binding IsBusy}" />
+        <!--<CollectionView ItemsSource="{Binding Rates}"
+                        SelectionMode="Single"
+                        SelectedItem="{Binding SelectedRate}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="shippo:Rate">
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Buy"
+                                           BackgroundColor="MediumSeaGreen"
+                                           Command="{Binding Source={RelativeSource AncestorType={x:Type vm:QuoteRatesPageViewModel}},
+                                                             Path=SelectRateCommand}"
+                                           CommandParameter="{Binding .}"/>
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        <Grid Padding="12">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="{Binding ProviderImage200}"
+                                   HeightRequest="24"
+                                   WidthRequest="60"/>
+                            <VerticalStackLayout Grid.Column="1">
+                                <Label Text="{Binding Provider}"/>
+                                <Label FontSize="12"
+                                       Text="{Binding Servicelevel.Name}"/>
+                            </VerticalStackLayout>
+                            <Label Grid.Column="2"
+                                   FontAttributes="Bold"
+                                   Text="{Binding Amount, StringFormat='${0:F2}'}"/>
+                        </Grid>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>-->
+    </Grid>
+</ContentPage>
