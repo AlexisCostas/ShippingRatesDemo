@@ -30,6 +30,11 @@
                             Command="{Binding CreateCommand}"/>
                 </HorizontalStackLayout>
 
+                <Label Text="{Binding CountDisplay}"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Margin="0,10,0,0"/>
+
                 <ActivityIndicator IsRunning="{Binding IsBusy}"
                                    IsVisible="{Binding IsBusy}" />
 

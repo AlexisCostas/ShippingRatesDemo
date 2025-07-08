@@ -31,20 +31,6 @@ namespace ShippingRatesDemos.ViewModels
             try
             {
                 IsBusy = true;
-                Address address = await sdk.Addresses.CreateAsync(
-                                new AddressCreateRequest()
-                                {
-                                    Name = "Shawn Ippotle",
-                                    Company = "Shippo",
-                                    Street1 = "215 Clayton St.",
-                                    City = "San Francisco",
-                                    State = "CA",
-                                    Zip = "94117",
-                                    Country = "US",
-                                    Phone = "+1 555 341 9393",
-                                    Email = "shippotle@shippo.com",
-                                }
-                                    );
             }
             finally
             {

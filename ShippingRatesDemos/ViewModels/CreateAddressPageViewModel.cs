@@ -41,10 +41,19 @@ namespace ShippingRatesDemos.ViewModels
         private const int MaxAddresses = 5;
         private const string UsedKey = "UsedTemplates";   // CSV of indices (0-4)
         private const string CountKey = "CreatedCount";
+        [ObservableProperty]
+        private int createdCount;
 
+        partial void OnCreatedCountChanged(int oldValue, int newValue)
+        {
+            OnPropertyChanged(nameof(CountDisplay));
+        }
+        public string CountDisplay =>
+        $"{AppResources.LblCreatedPrefix} {CreatedCount}/{MaxAddresses}";
         public CreateAddressPageViewModel(IShippoService shippo)
         {
             _shippo = shippo;
+            CreatedCount = Preferences.Get(CountKey, 0);
 
             InitializeFields();
 
@@ -61,7 +70,7 @@ namespace ShippingRatesDemos.ViewModels
                 new AddressTemplate("Jane Smith", "Globex LLC", "350 5th Ave",     "New York",      "NY", "10118"),
                 new AddressTemplate("Bob Stone",  "Wayne Co.",  "1007 Mountain",   "Gotham",        "NJ", "07097"),
                 new AddressTemplate("Alice Wu",   "Initech",    "1 Infinite Loop", "Cupertino",     "CA", "95014"),
-                new AddressTemplate("Carlos Díaz","Umbrella",   "1600 Amphitheatre Pkwy", "Mountain View", "CA", "94043")
+                new AddressTemplate("Carlos Diaz","Umbrella",   "1600 Amphitheatre Pkwy", "Mountain View", "CA", "94043")
             };
 
             templates.Clear();
@@ -78,8 +87,6 @@ namespace ShippingRatesDemos.ViewModels
             CreatedCount = Preferences.Get(CountKey, 0);
             CanAutofill = templates.Any() && CreatedCount < MaxAddresses;
         }
-
-        private int CreatedCount { get; set; }
 
         private void InitializeFields()
         {

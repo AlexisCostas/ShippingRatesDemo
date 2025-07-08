@@ -158,6 +158,9 @@ Compañía: {1}</value>
   <data name="CreateAddressDesc" xml:space="preserve">
     <value>Completa el formulario para crear una dirección en el modo Test de Shippo.</value>
   </data>
+  <data name="LblCreatedPrefix" xml:space="preserve">
+    <value>Direcciones:</value>
+  </data>
   <data name="PageCreateAddressTitle" xml:space="preserve">
     <value>Crear dirección</value>
   </data>

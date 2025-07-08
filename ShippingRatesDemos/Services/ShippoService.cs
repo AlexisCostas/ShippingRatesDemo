@@ -16,7 +16,7 @@ namespace ShippingRatesDemos.Services
         {
             _sdk = new ShippoSDK(
                 apiKeyHeader: apiKey,
-                shippoApiVersion: "201802-08");
+                shippoApiVersion: "2018-02-08");
         }
 
         public Task<Address> CreateAddressAsync(AddressCreateRequest req) =>

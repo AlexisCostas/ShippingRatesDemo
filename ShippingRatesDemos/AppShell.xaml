@@ -12,7 +12,7 @@
         Title="{x:Static i18n:AppResources.ShellMenuTitle}"
         Icon="{StaticResource IconDashboard}"
         ContentTemplate="{DataTemplate pages:MainPage}"
-        Route="main" />
+        Route="MainPage" />
 
     <ShellContent
         Route="CreateAddressPage"

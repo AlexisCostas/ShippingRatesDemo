@@ -159,6 +159,9 @@ Company: {1}</value>
   <data name="CreateAddressDesc" xml:space="preserve">
     <value>Fill the form below to create an address in Shippo Test Mode.</value>
   </data>
+  <data name="LblCreatedPrefix" xml:space="preserve">
+    <value>Addresses: </value>
+  </data>
   <data name="PageCreateAddressTitle" xml:space="preserve">
     <value>Create Address</value>
   </data>

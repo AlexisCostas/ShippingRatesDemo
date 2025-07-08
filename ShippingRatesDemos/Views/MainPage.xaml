@@ -12,7 +12,12 @@
             <toolkit:InvertedBoolConverter x:Key="Not" />
         </ResourceDictionary>
     </ContentPage.Resources>
-    
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior
+            EventName="Appearing"
+            Command="{Binding AppearingCommand}" />
+    </ContentPage.Behaviors>
+
     <ContentPage.Content>
         <Grid RowDefinitions="Auto, *">
             <VerticalStackLayout Padding="30" Spacing="20" IsVisible="{Binding IsBusy, Converter={StaticResource Not}}">

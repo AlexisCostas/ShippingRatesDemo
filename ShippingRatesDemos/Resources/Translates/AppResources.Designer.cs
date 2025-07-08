@@ -180,6 +180,15 @@ namespace ShippingRatesDemos.Resources.Translates {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Addresses: .
+        /// </summary>
+        internal static string LblCreatedPrefix {
+            get {
+                return ResourceManager.GetString("LblCreatedPrefix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Create Address.
         /// </summary>
         internal static string PageCreateAddressTitle {
