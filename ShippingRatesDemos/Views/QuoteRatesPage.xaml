@@ -3,57 +3,58 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShippingRatesDemos.Views.QuoteRatesPage"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             xmlns:i18n="clr-namespace:ShippingRatesDemos.Resources.Translates"  
+             xmlns:i18n="clr-namespace:ShippingRatesDemos.Resources.Translates"
+             xmlns:shippo="clr-namespace:Shippo.Models.Components;assembly=Shippo"
              Title="QuoteRatesPage">
     <ContentPage.Behaviors>
-        <toolkit:EventToCommandBehavior
-            EventName="Appearing"
-            Command="{Binding AppearingCommand}" />
+        <toolkit:EventToCommandBehavior EventName="Appearing"
+                                        Command="{Binding AppearingCommand}" />
     </ContentPage.Behaviors>
-    <Grid RowDefinitions="Auto,*">
+
+    <StackLayout Padding="20" Spacing="15">
+
+        <!-- FROM picker -->
+        <Picker Title="From"
+                ItemsSource="{Binding Addresses}"
+                ItemDisplayBinding="{Binding Display}"
+                SelectedItem="{Binding SelectedFrom}" />
+
+        <!-- TO picker -->
+        <Picker Title="To"
+                ItemsSource="{Binding Addresses}"
+                ItemDisplayBinding="{Binding Display}"
+                SelectedItem="{Binding SelectedTo}" />
+
+        <!-- botón -->
+        <Button Text="{x:Static i18n:AppResources.BtnRates}"
+                Command="{Binding GetRatesCommand}"
+                IsEnabled="{Binding CanGetRates}" />
+
+        <!-- spinner -->
         <ActivityIndicator IsRunning="{Binding IsBusy}"
                            IsVisible="{Binding IsBusy}" />
-        <Button Text="{x:Static i18n:AppResources.BtnRates}"  
-                    Command="{Binding SelectRateCommand}"  
-                    IsEnabled="{Binding HasAddress}" />
-        
-        <!--<CollectionView ItemsSource="{Binding Rates}"
+
+        <!-- listado de tarifas -->
+        <CollectionView ItemsSource="{Binding Rates}"
                         SelectionMode="Single"
-                        SelectedItem="{Binding SelectedRate}">
+                        SelectionChangedCommand="{Binding SelectRateCommand}"
+                        SelectionChangedCommandParameter="{Binding CurrentSelection[0]}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="shippo:Rate">
-                    <SwipeView>
-                        <SwipeView.RightItems>
-                            <SwipeItems>
-                                <SwipeItem Text="Buy"
-                                           BackgroundColor="MediumSeaGreen"
-                                           Command="{Binding Source={RelativeSource AncestorType={x:Type vm:QuoteRatesPageViewModel}},
-                                                             Path=SelectRateCommand}"
-                                           CommandParameter="{Binding .}"/>
-                            </SwipeItems>
-                        </SwipeView.RightItems>
-                        <Grid Padding="12">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto"/>
-                            </Grid.ColumnDefinitions>
+                    <Grid Padding="12" ColumnDefinitions="*,Auto">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Provider}" />
+                            <Label FontSize="12"
+                                   Text="{Binding Servicelevel.Name}" />
+                        </VerticalStackLayout>
 
-                            <Image Source="{Binding ProviderImage200}"
-                                   HeightRequest="24"
-                                   WidthRequest="60"/>
-                            <VerticalStackLayout Grid.Column="1">
-                                <Label Text="{Binding Provider}"/>
-                                <Label FontSize="12"
-                                       Text="{Binding Servicelevel.Name}"/>
-                            </VerticalStackLayout>
-                            <Label Grid.Column="2"
-                                   FontAttributes="Bold"
-                                   Text="{Binding Amount, StringFormat='${0:F2}'}"/>
-                        </Grid>
-                    </SwipeView>
+                        <Label Grid.Column="1"
+                               FontAttributes="Bold"
+                               Text="{Binding Amount, StringFormat='${0:F2}'}" />
+                    </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
-        </CollectionView>-->
-    </Grid>
+        </CollectionView>
+
+    </StackLayout>
 </ContentPage>
