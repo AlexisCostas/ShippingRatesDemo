@@ -14,20 +14,20 @@
         ContentTemplate="{DataTemplate pages:MainPage}"
         Route="MainPage" />
 
-    <ShellContent
+    <!--<ShellContent
         Route="CreateAddressPage"
         ContentTemplate="{DataTemplate pages:CreateAddressPage}"
-        FlyoutItemIsVisible	="False"/>
+        FlyoutItemIsVisible	="False"/>-->
 
     <ShellContent
         Route="SetupPage"
         ContentTemplate="{DataTemplate pages:SetupPage}"
         FlyoutItemIsVisible	="False"/>
 
-    <ShellContent
+    <!--<ShellContent
         Route="QuoteRatesPage"
         ContentTemplate="{DataTemplate pages:QuoteRatesPage}"
-        FlyoutItemIsVisible	="False"/>
+        FlyoutItemIsVisible	="False"/>-->
 
     <!--<Shell.FlyoutFooter>
         <Grid Padding="15">

@@ -10,14 +10,6 @@
         <toolkit:EventToCommandBehavior EventName="Appearing"
                                         Command="{Binding AppearingCommand}" />
     </ContentPage.Behaviors>
-    <ContentPage.ToolbarItems>
-        <ToolbarItem
-            Text="Back"
-            IconImageSource="back_icon.png"
-            Command="{Binding GoBackCommand}"
-            Priority="0"
-            Order="Primary" />
-    </ContentPage.ToolbarItems>
 
     <StackLayout Padding="20" Spacing="15">
 

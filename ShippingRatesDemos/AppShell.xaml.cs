@@ -12,6 +12,7 @@ namespace ShippingRatesDemos
             InitializeComponent();
 
             CheckApiKeyAndNavigate();
+            RegisterRoutes();
 
         }
         public static async Task DisplaySnackbarAsync(string message)
@@ -55,6 +56,13 @@ namespace ShippingRatesDemos
             var key = await KeyStore.GetAsync();
             await GoToAsync(key is null ? $"//{nameof(SetupPage)}"
                                         : $"//{nameof(MainPage)}");
+        }
+
+        private void RegisterRoutes()
+        {
+            Routing.RegisterRoute(nameof(CreateAddressPage), typeof(CreateAddressPage));
+            Routing.RegisterRoute(nameof(QuoteRatesPage), typeof(QuoteRatesPage));
+            Routing.RegisterRoute(nameof(SetupPage), typeof(SetupPage));
         }
     }
 }

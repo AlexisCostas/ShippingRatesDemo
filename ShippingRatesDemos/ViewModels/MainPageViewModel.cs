@@ -84,10 +84,10 @@ namespace ShippingRatesDemos.ViewModels
 
         [RelayCommand]
         private async Task GoToCreateAddressAsync()
-        => await Shell.Current.GoToAsync("//CreateAddressPage");
+        => await Shell.Current.GoToAsync(nameof(CreateAddressPage));
 
         [RelayCommand]
         private async Task GoToQuoteRatesAsync()
-            => await Shell.Current.GoToAsync("//QuoteRatesPage");
+            => await Shell.Current.GoToAsync(nameof(QuoteRatesPage));
     }
 }

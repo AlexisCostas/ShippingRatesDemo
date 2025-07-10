@@ -4,16 +4,7 @@
              x:Class="ShippingRatesDemos.Views.CreateAddressPage"
              xmlns:i18n="clr-namespace:ShippingRatesDemos.Resources.Translates"
              Title="CreateAddressPage">
-    
-        <ContentPage.ToolbarItems>
-            <ToolbarItem
-            IconImageSource="back_icon.png"
-            Command="{Binding GoBackCommand}"
-            Priority="0"
-            Order="Primary" />
-        </ContentPage.ToolbarItems>
-
-        <ScrollView>
+    <ScrollView>
             <VerticalStackLayout Padding="20" Spacing="10">
                 
                 <Label LineBreakMode="WordWrap"
