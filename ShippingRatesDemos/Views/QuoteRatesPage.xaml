@@ -10,8 +10,16 @@
         <toolkit:EventToCommandBehavior EventName="Appearing"
                                         Command="{Binding AppearingCommand}" />
     </ContentPage.Behaviors>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <toolkit:InvertedBoolConverter x:Key="Not" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
-    <StackLayout Padding="20" Spacing="15">
+    <Grid>
+        <StackLayout Padding="20" Spacing="15"
+            IsVisible="{Binding IsBusy, Converter={StaticResource Not}}">
+
 
         <Picker Title="{x:Static i18n:AppResources.PickerFrom}"
                 ItemsSource="{Binding Addresses}"
@@ -23,33 +31,36 @@
                 ItemDisplayBinding="{Binding Display}"
                 SelectedItem="{Binding SelectedTo}" />
 
-        <Button Text="{x:Static i18n:AppResources.BtnRates}"
+            <Button Text="{x:Static i18n:AppResources.BtnRates}"
                 Command="{Binding GetRatesCommand}"
                 IsEnabled="{Binding CanGetRates}" />
 
-        <ActivityIndicator IsRunning="{Binding IsBusy}"
-                           IsVisible="{Binding IsBusy}" />
-
-        <CollectionView ItemsSource="{Binding Rates}"
+            <CollectionView ItemsSource="{Binding Rates}"
                         SelectionMode="Single"
                         SelectionChangedCommand="{Binding SelectRateCommand}"
                         SelectionChangedCommandParameter="{Binding CurrentSelection[0]}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="shippo:Rate">
-                    <Grid Padding="12" ColumnDefinitions="*,Auto">
-                        <VerticalStackLayout>
-                            <Label Text="{Binding Provider}" />
-                            <Label FontSize="12"
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="shippo:Rate">
+                        <Grid Padding="12" ColumnDefinitions="*,Auto">
+                            <VerticalStackLayout>
+                                <Label Text="{Binding Provider}" />
+                                <Label FontSize="12"
                                    Text="{Binding Servicelevel.Name}" />
-                        </VerticalStackLayout>
+                            </VerticalStackLayout>
 
-                        <Label Grid.Column="1"
+                            <Label Grid.Column="1"
                                FontAttributes="Bold"
                                Text="{Binding Amount, StringFormat='${0:F2}'}" />
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-
-    </StackLayout>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+        <ActivityIndicator IsRunning="{Binding IsBusy}"
+                           IsVisible="{Binding IsBusy}"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           WidthRequest="50"
+                           HeightRequest="50"/>
+    </Grid>
 </ContentPage>
