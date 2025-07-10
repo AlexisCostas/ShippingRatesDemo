@@ -103,5 +103,8 @@ namespace ShippingRatesDemos.ViewModels
                 : this(a.ObjectId!, $"{a.Name} — {a.City}, {a.State}") { }
             public override string ToString() => Display;   
         }
+
+        [RelayCommand]
+        private async Task GoBackAsync() => await Shell.Current.GoToAsync("..");
     }
 }

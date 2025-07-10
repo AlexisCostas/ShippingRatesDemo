@@ -208,5 +208,8 @@ namespace ShippingRatesDemos.ViewModels
                 Preferences.Set(UsedKey, string.Join(',', list));
             }
         }
+
+        [RelayCommand]
+        private async Task GoBackAsync() => await Shell.Current.GoToAsync("..");
     }
 }
