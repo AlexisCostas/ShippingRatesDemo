@@ -5,7 +5,7 @@
              xmlns:sf="clr-namespace:Syncfusion.Maui.Toolkit.SegmentedControl;assembly=Syncfusion.Maui.Toolkit"
              x:Class="ShippingRatesDemos.Views.SetupPage"
              xmlns:i18n="clr-namespace:ShippingRatesDemos.Resources.Translates"  
-             Title="{x:Static i18n:AppResources.SetupTitle}">
+             Title="{x:Static i18n:AppResources.PageSetupTitle}">
 
     <ContentPage.Resources>
         <ResourceDictionary>

@@ -5,7 +5,7 @@
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"  
              xmlns:i18n="clr-namespace:ShippingRatesDemos.Resources.Translates"
              xmlns:shippo="clr-namespace:Shippo.Models.Components;assembly=Shippo"
-             Title="QuoteRatesPage">
+             Title="{x:Static i18n:AppResources.PageQuoteRatesTitle}">
     <ContentPage.Behaviors>
         <toolkit:EventToCommandBehavior EventName="Appearing"
                                         Command="{Binding AppearingCommand}" />
@@ -13,12 +13,12 @@
 
     <StackLayout Padding="20" Spacing="15">
 
-        <Picker Title="From"
+        <Picker Title="{x:Static i18n:AppResources.PickerFrom}"
                 ItemsSource="{Binding Addresses}"
                 ItemDisplayBinding="{Binding Display}"
                 SelectedItem="{Binding SelectedFrom}" />
 
-        <Picker Title="To"
+        <Picker Title="{x:Static i18n:AppResources.PickerTo}"
                 ItemsSource="{Binding Addresses}"
                 ItemDisplayBinding="{Binding Display}"
                 SelectedItem="{Binding SelectedTo}" />

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShippingRatesDemos.Views.CreateAddressPage"
              xmlns:i18n="clr-namespace:ShippingRatesDemos.Resources.Translates"
-             Title="CreateAddressPage">
+             Title="{x:Static i18n:AppResources.PageCreateAddressTitle}">
     <ScrollView>
             <VerticalStackLayout Padding="20" Spacing="10">
                 
@@ -11,17 +11,37 @@
                        Text="{x:Static i18n:AppResources.CreateAddressDesc}" />
 
                 <!-- Entries -->
-                <Entry Placeholder="Name"      Text="{Binding Name}" />
-                <Entry Placeholder="Company"   Text="{Binding Company}" />
-                <Entry Placeholder="Street"    Text="{Binding Street1}" />
-                <Entry Placeholder="City"      Text="{Binding City}" />
-                <Entry Placeholder="State"     Text="{Binding State}" />
-                <Entry Placeholder="ZIP"       Text="{Binding Zip}" Keyboard="Numeric"/>
-                <Entry Placeholder="Country"   Text="{Binding Country}" />
-                <Entry Placeholder="Phone"     Text="{Binding Phone}" Keyboard="Telephone"/>
-                <Entry Placeholder="Email"     Text="{Binding Email}" Keyboard="Email" />
+            <Entry Placeholder="{x:Static i18n:AppResources.EntryName}"
+                Text="{Binding Name}" />
 
-                <!-- Buttons -->
+            <Entry Placeholder="{x:Static i18n:AppResources.EntryCompany}"
+                Text="{Binding Company}" />
+
+            <Entry Placeholder="{x:Static i18n:AppResources.EntryStreet}"
+                Text="{Binding Street1}" />
+
+            <Entry Placeholder="{x:Static i18n:AppResources.EntryCity}"
+                Text="{Binding City}" />
+
+            <Entry Placeholder="{x:Static i18n:AppResources.EntryState}"
+                Text="{Binding State}" />
+
+            <Entry Placeholder="{x:Static i18n:AppResources.EntryZip}"
+               Text="{Binding Zip}"
+               Keyboard="Numeric" />
+
+            <Entry Placeholder="{x:Static i18n:AppResources.EntryCountry}"
+                Text="{Binding Country}" />
+
+            <Entry Placeholder="{x:Static i18n:AppResources.EntryPhone}"
+                Text="{Binding Phone}"
+                Keyboard="Telephone" />
+
+            <Entry Placeholder="{x:Static i18n:AppResources.EntryEmail}"
+               Text="{Binding Email}"
+               Keyboard="Email" />
+                
+            <!-- Buttons -->
                 <HorizontalStackLayout Spacing="15">
                     <Button Text="{x:Static i18n:AppResources.BtnAutofill}"
                             Command="{Binding AutofillCommand}" />
