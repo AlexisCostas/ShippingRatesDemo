@@ -41,16 +41,12 @@ namespace ShippingRatesDemos.ViewModels
         [RelayCommand]
         private async Task AppearingAsync()
         {
-            if (Addresses.Any()) return;              // ya cargadas
+            if (Addresses.Any()) return;           
 
             try
             {
                 IsBusy = true;
                 var list = await _shippo.ListAddressesAsync(MaxFetch);
-
-                // Fix for the error CS1061: 'AddressPaginatedList' does not contain a definition for 'Select'
-                // The issue is that 'list' is of type 'AddressPaginatedList', which does not have a Select method.
-                // Instead, we need to access the 'Results' property of 'AddressPaginatedList', which is a List<Address> and supports LINQ methods.
 
                 Addresses = new ObservableCollection<AddressItem>(list.Results?.Select(a => new AddressItem(a)) ?? Enumerable.Empty<AddressItem>());
             }
@@ -60,7 +56,7 @@ namespace ShippingRatesDemos.ViewModels
             }
             finally { IsBusy = false; }
         }
-
+        [RelayCommand]
         private async Task GetRatesAsync()
         {
             if (!CanGetRates) return;
@@ -97,8 +93,8 @@ namespace ShippingRatesDemos.ViewModels
         [RelayCommand]
         private async Task SelectRateAsync(Rate rate)
         {
-            await Shell.Current.GoToAsync("//BuyLabelPage",
-                new Dictionary<string, object?> { ["RateId"] = rate.ObjectId });
+            //await Shell.Current.GoToAsync("//BuyLabelPage",
+            //    new Dictionary<string, object?> { ["RateId"] = rate.ObjectId });
         }
 
         public record AddressItem(string Id, string Display)

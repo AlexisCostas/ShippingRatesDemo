@@ -13,28 +13,23 @@
 
     <StackLayout Padding="20" Spacing="15">
 
-        <!-- FROM picker -->
         <Picker Title="From"
                 ItemsSource="{Binding Addresses}"
                 ItemDisplayBinding="{Binding Display}"
                 SelectedItem="{Binding SelectedFrom}" />
 
-        <!-- TO picker -->
         <Picker Title="To"
                 ItemsSource="{Binding Addresses}"
                 ItemDisplayBinding="{Binding Display}"
                 SelectedItem="{Binding SelectedTo}" />
 
-        <!-- botón -->
         <Button Text="{x:Static i18n:AppResources.BtnRates}"
                 Command="{Binding GetRatesCommand}"
                 IsEnabled="{Binding CanGetRates}" />
 
-        <!-- spinner -->
         <ActivityIndicator IsRunning="{Binding IsBusy}"
                            IsVisible="{Binding IsBusy}" />
 
-        <!-- listado de tarifas -->
         <CollectionView ItemsSource="{Binding Rates}"
                         SelectionMode="Single"
                         SelectionChangedCommand="{Binding SelectRateCommand}"
