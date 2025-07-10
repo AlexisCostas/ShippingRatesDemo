@@ -31,5 +31,15 @@ namespace ShippingRatesDemos.Services
         {
             throw new NotImplementedException();
         }
+
+        public async Task<AddressPaginatedList> ListAddressesAsync(int max = 20)
+        {
+            // 1) pides la primera página indicando cuántos resultados
+            AddressPaginatedList page = await _sdk.Addresses.ListAsync(results: max);
+
+            // 2) la clase AddressPaginatedList implementa IEnumerable<Address>
+            //    por lo que basta con convertirla a lista
+            return page;           // using System.Linq;
+        }
     }
 }

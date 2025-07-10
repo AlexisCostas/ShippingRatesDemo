@@ -19,12 +19,12 @@ namespace ShippingRatesDemos.ViewModels
         public QuoteRatesPageViewModel(IShippoService shippo)
             => _shippo = shippo;
 
-        [ObservableProperty] bool isBusy;
-        [ObservableProperty] ObservableCollection<Rate> rates = [];
+        [ObservableProperty] 
+        bool isBusy;
+        [ObservableProperty] 
+        ObservableCollection<Rate> rates = [];
 
-        // parameters injected by Shell navigation
-        [ObservableProperty] string? fromAddressId;
-        [ObservableProperty] string? toAddressId;
+        private const string IdListKey = "CreatedAddressIds";   // CSV
 
         [RelayCommand]
         private async Task AppearingAsync()
@@ -34,23 +34,23 @@ namespace ShippingRatesDemos.ViewModels
 
             try
             {
-                var shipment = await _shippo.CreateShipmentAsync(new ShipmentCreateRequest
-                {
-                    AddressFrom = AddressFrom.CreateStr(FromAddressId!),   //  ← string ID
-                    AddressTo = AddressTo.CreateStr(ToAddressId!),     //  ← string ID
-                    Parcels = new()
-    {
-                    //Parcels.CreateParcelCreateRequest(new ParcelCreateRequest
-                    //{
-                    //    Length = "5", Width = "5", Height = "5",
-                    //    DistanceUnit = DistanceUnitEnum.In,
-                    //    Weight = "2", MassUnit = WeightUnitEnum.Lb
-                    //})
-    },
-                    Async = false
-                });
+                //var shipment = await _shippo.CreateShipmentAsync(new ShipmentCreateRequest
+                //{
+                //    //AddressFrom = AddressFrom.CreateStr(FromAddressId!),   //  ← string ID
+                //    //AddressTo = AddressTo.CreateStr(ToAddressId!),     //  ← string ID
+                //    Parcels = new()
+                //    {
+                //    //Parcels.CreateParcelCreateRequest(new ParcelCreateRequest
+                //    //{
+                //    //    Length = "5", Width = "5", Height = "5",
+                //    //    DistanceUnit = DistanceUnitEnum.In,
+                //    //    Weight = "2", MassUnit = WeightUnitEnum.Lb
+                //    //})
+                //    },
+                //    Async = false
+                //});
 
-                Rates = new ObservableCollection<Rate>(shipment.Rates);
+                //Rates = new ObservableCollection<Rate>(shipment.Rates);
             }
             catch (Exception ex)
             {
@@ -60,11 +60,12 @@ namespace ShippingRatesDemos.ViewModels
         }
 
         [RelayCommand]
-        private async Task SelectRateAsync(Rate rate)
+        private async Task SelectRateAsync()
         {
-            // Navigate to your *BuyLabel* page, hand over rate.ObjectId
-            await Shell.Current.GoToAsync("//BuyLabelPage",
-                new Dictionary<string, object?> { ["RateId"] = rate.ObjectId });
+            AddressPaginatedList page = await _shippo.ListAddressesAsync();
+
+            Console.WriteLine("Metodo ejecutado pelotudo");
+            //not implemented yet
         }
     }
 }
