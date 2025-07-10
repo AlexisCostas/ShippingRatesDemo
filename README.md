@@ -35,21 +35,21 @@ dotnet build -t:Run -f net9.0-ios
 #    Windows example
 dotnet build -t:Run -f net9.0-windows10.0.19041.0
 
-Launch the app – you’ll land on the Setup screen.
+```     
 
-Paste your Shippo test API key and tap Save.
+2. **Launch the app** – you’ll land on the Setup screen.
 
-If you use a shared test key it may already contain addresses; on each device you can still create up to 5 additional addresses (remove & reinstall the app to reset the limit).
+3. **Paste your Shippo test API** key and **tap Save**.
 
-After at least two addresses exist, open Quote Rates:
+4. If you use a shared test key it may already contain addresses**; on each device **you can still create up to 5 additional addresses** (remove & reinstall the app to reset the limit).
 
-select “From” / “To” in the pickers,
+5. After at least two addresses exist, **open Quote Rates**:
 
-press Get Rates to retrieve live shipping prices in test mode.
+6. **Select** “From” / “To” in the pickers,
 
-(Optional) change the theme switcher in Main page’s bottom-right corner.
+7. **Press Get Rates** to retrieve live shipping **prices in test mode**.
 
-```
+8. (Optional) **Change the theme** switcher in Main page’s bottom-right corner.
 
 ---
 
