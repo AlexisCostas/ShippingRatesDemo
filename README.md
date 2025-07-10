@@ -1,4 +1,4 @@
-# Shipping Rates Demo 📦💸  
+# Shipping Rates Demo 📦💸  <a id="#shipping-rates-demo-📦💸"></a>
 _🚀 .NET MAUI • C# 12 • Shippo API (Test Mode) • EN / ES i18n_
 
 Shipping Rates Demo is a **cross‑platform mobile app** (Android · iOS · Windows · macOS) that illustrates a clean **MVVM architecture** and a production‑ready integration with the **Shippo** shipping API.
@@ -103,7 +103,17 @@ Shipping Rates Demo es una **app móvil multiplataforma** (Android · iOS · Win
 | 📝 Crear direcciones (autocompletado de muestra) | ✅ |
 | 📬 Listar direcciones y cotizar envíos | ✅ |
 
-### ▶️ Prueba rápida
+---
+
+## 📚 Índice
+1. [Prueba rápida](#prueba-rápida)
+2. [Stack y arquitectura](#stack-y-arquitectura)
+3. [Hoja de ruta](#hoja-de-ruta-breve)
+4. [Versión en inglés](#shipping-rates-demo-📦💸)
+
+---
+
+### ▶️ Prueba rápida <a id="#prueba-rápida"></a>
 
 ```bash
 # 1) Compila y ejecuta la app  ──► elige la plataforma
@@ -132,7 +142,7 @@ pulsa Get Rates para obtener precios de envío en modo test.
 (Opcional) cambia entre tema claro / oscuro con el selector flotante.
 ```
 
-### 🧩 Stack y arquitectura
+### 🧩 Stack y arquitectura <a id="#stack-y-arquitectura"></a>
 
 * Proyecto único **.NET MAUI**  
 * Patrón **MVVM** con `CommunityToolkit.Mvvm`  
@@ -151,7 +161,7 @@ ShippingRatesDemo/
  └─ AppShell.xaml        navegación & temas
 ```
 
-### 🛣️ Hoja de ruta breve
+### 🛣️ Hoja de ruta breve <a id="#hoja-de-ruta-breve"></a>
 
 | Elemento | Nota |
 |----------|------|
@@ -161,5 +171,4 @@ ShippingRatesDemo/
 | 📝 Mejorar README | Añadir GIF demo y video paso a paso |
 | 🛠️ **CI / CD & DevOps** | Pipeline con GitHub Actions → compilación automática MAUI y generación de APK / IPA |
 
-Fuentes
 </details>
