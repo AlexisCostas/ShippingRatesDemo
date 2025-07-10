@@ -159,11 +159,47 @@ Company: {1}</value>
   <data name="CreateAddressDesc" xml:space="preserve">
     <value>Fill the form below to create an address in Shippo Test Mode.</value>
   </data>
+  <data name="EntryCity" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="EntryCompany" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="EntryCountry" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="EntryEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EntryName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="EntryPhone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="EntryState" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="EntryStreet" xml:space="preserve">
+    <value>Street</value>
+  </data>
+  <data name="EntryZip" xml:space="preserve">
+    <value>ZIP</value>
+  </data>
   <data name="LblCreatedPrefix" xml:space="preserve">
     <value>Addresses: </value>
   </data>
   <data name="PageCreateAddressTitle" xml:space="preserve">
     <value>Create Address</value>
+  </data>
+  <data name="PageQuoteRatesTitle" xml:space="preserve">
+    <value>Quote rates</value>
+  </data>
+  <data name="PickerFrom" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="PickerTo" xml:space="preserve">
+    <value>To</value>
   </data>
   <data name="SetupBtnSave" xml:space="preserve">
     <value>Save</value>
@@ -174,7 +210,7 @@ Company: {1}</value>
   <data name="SetupPlaceholderApiKey" xml:space="preserve">
     <value>shippo_test_…</value>
   </data>
-  <data name="SetupTitle" xml:space="preserve">
+  <data name="PageSetupTitle" xml:space="preserve">
     <value>Shippo Setup</value>
   </data>
   <data name="ShellMenuTitle" xml:space="preserve">

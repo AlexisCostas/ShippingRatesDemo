@@ -180,6 +180,87 @@ namespace ShippingRatesDemos.Resources.Translates {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to City.
+        /// </summary>
+        internal static string EntryCity {
+            get {
+                return ResourceManager.GetString("EntryCity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Company.
+        /// </summary>
+        internal static string EntryCompany {
+            get {
+                return ResourceManager.GetString("EntryCompany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Country.
+        /// </summary>
+        internal static string EntryCountry {
+            get {
+                return ResourceManager.GetString("EntryCountry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        internal static string EntryEmail {
+            get {
+                return ResourceManager.GetString("EntryEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        internal static string EntryName {
+            get {
+                return ResourceManager.GetString("EntryName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone.
+        /// </summary>
+        internal static string EntryPhone {
+            get {
+                return ResourceManager.GetString("EntryPhone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to State.
+        /// </summary>
+        internal static string EntryState {
+            get {
+                return ResourceManager.GetString("EntryState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Street.
+        /// </summary>
+        internal static string EntryStreet {
+            get {
+                return ResourceManager.GetString("EntryStreet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ZIP.
+        /// </summary>
+        internal static string EntryZip {
+            get {
+                return ResourceManager.GetString("EntryZip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Addresses: .
         /// </summary>
         internal static string LblCreatedPrefix {
@@ -194,6 +275,42 @@ namespace ShippingRatesDemos.Resources.Translates {
         internal static string PageCreateAddressTitle {
             get {
                 return ResourceManager.GetString("PageCreateAddressTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quote rates.
+        /// </summary>
+        internal static string PageQuoteRatesTitle {
+            get {
+                return ResourceManager.GetString("PageQuoteRatesTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shippo Setup.
+        /// </summary>
+        internal static string PageSetupTitle {
+            get {
+                return ResourceManager.GetString("PageSetupTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From.
+        /// </summary>
+        internal static string PickerFrom {
+            get {
+                return ResourceManager.GetString("PickerFrom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To.
+        /// </summary>
+        internal static string PickerTo {
+            get {
+                return ResourceManager.GetString("PickerTo", resourceCulture);
             }
         }
         
@@ -221,15 +338,6 @@ namespace ShippingRatesDemos.Resources.Translates {
         internal static string SetupPlaceholderApiKey {
             get {
                 return ResourceManager.GetString("SetupPlaceholderApiKey", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Shippo Setup.
-        /// </summary>
-        internal static string SetupTitle {
-            get {
-                return ResourceManager.GetString("SetupTitle", resourceCulture);
             }
         }
         
