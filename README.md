@@ -24,9 +24,31 @@ Shipping Rates Demo is a **cross‑platform mobile app** (Android · iOS · Wind
 ## ▶️ Quick Start <a id="quick-start"></a>
 
 ```bash
-# 1) Launch the app → Setup Screen → paste your Shippo **test** key
-
+# 1) Build & run the app    ──► choose the target you need
+#
+#    Android example
 dotnet build -t:Run -f net9.0-android
+
+#    iOS (simulator) example
+dotnet build -t:Run -f net9.0-ios
+
+#    Windows example
+dotnet build -t:Run -f net9.0-windows10.0.19041.0
+
+Launch the app – you’ll land on the Setup screen.
+
+Paste your Shippo test API key and tap Save.
+
+If you use a shared test key it may already contain addresses; on each device you can still create up to 5 additional addresses (remove & reinstall the app to reset the limit).
+
+After at least two addresses exist, open Quote Rates:
+
+select “From” / “To” in the pickers,
+
+press Get Rates to retrieve live shipping prices in test mode.
+
+(Optional) change the theme switcher in Main page’s bottom-right corner.
+
 ```
 
 ---
@@ -60,6 +82,7 @@ ShippingRatesDemo/
 | ⚙️ **Settings Page** | Reset / change stored API key, toggle language |
 | 📬 Complete rate‑quoting flow | Enable address pickers → shipment creation |
 | 🎞️ Improve README | Add demo GIF & step‑by‑step video |
+| 🛠️ **CI / CD & DevOps** | GitHub Actions build pipeline → automatic MAUI builds & APK / IPA artifacts |
 
 ---
 
@@ -83,8 +106,30 @@ Shipping Rates Demo es una **app móvil multiplataforma** (Android · iOS · Win
 ### ▶️ Prueba rápida
 
 ```bash
-# 1) Abre la app → pantalla Setup → pega tu Shippo **test** key
+# 1) Compila y ejecuta la app  ──► elige la plataforma
+#
+#    Ejemplo Android
 dotnet build -t:Run -f net9.0-android
+
+#    Ejemplo iOS (simulador)
+dotnet build -t:Run -f net9.0-ios
+
+#    Ejemplo Windows
+dotnet build -t:Run -f net9.0-windows10.0.19041.0
+
+Inicia la aplicación – verás la pantalla Setup.
+
+Pega tu API key test de Shippo y pulsa Save.
+
+Si usas una key compartida puede que ya existan direcciones; en cada dispositivo aún puedes crear hasta 5 direcciones extra (desinstala y reinstala la app para reiniciar el contador).
+
+Cuando tengas al menos dos direcciones, abre Quote Rates:
+
+elige “From” / “To” en los pickers,
+
+pulsa Get Rates para obtener precios de envío en modo test.
+
+(Opcional) cambia entre tema claro / oscuro con el selector flotante.
 ```
 
 ### 🧩 Stack y arquitectura
@@ -114,5 +159,7 @@ ShippingRatesDemo/
 | ⚙️ **Página de ajustes** | Reiniciar / cambiar API key, cambiar idioma |
 | 📬 Completar flujo de cotización | Picker de direcciones → creación de envío |
 | 📝 Mejorar README | Añadir GIF demo y video paso a paso |
+| 🛠️ **CI / CD & DevOps** | Pipeline con GitHub Actions → compilación automática MAUI y generación de APK / IPA |
 
+Fuentes
 </details>
