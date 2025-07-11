@@ -150,7 +150,8 @@ dotnet build -t:Run -f net9.0-windows10.0.19041.0
 6. **Selecciona** “From” / “To” en los pickers.  
 7. Pulsa **Get Rates** para obtener precios de envío en **modo test** en tiempo real.  
 8. _(Opcional)_ **Cambia el tema** claro/oscuro con el selector en la esquina inferior derecha de la página **Main**.  
-```
+
+---
 
 ### 🧩 Stack y arquitectura <a id="#stack-y-arquitectura"></a>
 
