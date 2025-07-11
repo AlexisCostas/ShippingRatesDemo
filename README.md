@@ -17,7 +17,8 @@ Shipping Rates Demo is a **cross‑platform mobile app** (Android · iOS · Wind
 1. [Quick Start](#quick-start)
 2. [Stack & Architecture](#stack--architecture)
 3. [Short Roadmap](#short-roadmap)
-4. [Versión en español](#versión-en-español)
+4. [Resources](#resources)
+5. [Versión en español](#versión-en-español)
 
 ---
 
@@ -74,6 +75,12 @@ ShippingRatesDemo/
 
 ---
 
+## 📚 Resources <a id="resources"></a>
+- 📖 **Shippo Docs** — Official API reference  
+  <https://docs.goshippo.com/>
+
+---
+
 ## 🛣️ Short Roadmap <a id="short-roadmap"></a>
 
 | Planned Item | Notes |
@@ -109,7 +116,8 @@ Shipping Rates Demo es una **app móvil multiplataforma** (Android · iOS · Win
 1. [Prueba rápida](#prueba-rápida)
 2. [Stack y arquitectura](#stack-y-arquitectura)
 3. [Hoja de ruta](#hoja-de-ruta-breve)
-4. [Versión en inglés](#shipping-rates-demo-📦💸)
+4. [Recursos](#recursos)
+5. [Versión en inglés](#shipping-rates-demo-📦💸)
 
 ---
 
@@ -156,6 +164,14 @@ ShippingRatesDemo/
  │   └─ Translates/      AppResources.resx · AppResources.es.resx
  └─ AppShell.xaml        navegación & temas
 ```
+
+---
+
+## 📚 Recursos <a id="recursos"></a>
+- 📖 **Documentación de Shippo** — Referencia oficial de la API  
+  <https://docs.goshippo.com/>
+
+---
 
 ### 🛣️ Hoja de ruta breve <a id="#hoja-de-ruta-breve"></a>
 
