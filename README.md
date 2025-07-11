@@ -24,6 +24,9 @@ Shipping Rates Demo is a **cross‑platform mobile app** (Android · iOS · Wind
 
 ## ▶️ Quick Start <a id="quick-start"></a>
 
+0. **Get a Shippo test API key** — sign up free and copy your *test* token from the dashboard.  
+   [Getting started & authentication →](https://docs.goshippo.com/docs/guides_general/authentication/)
+   
 ```bash
 # 1) Build & run the app    ──► choose the target you need
 #
@@ -122,6 +125,9 @@ Shipping Rates Demo es una **app móvil multiplataforma** (Android · iOS · Win
 ---
 
 ### ▶️ Prueba rápida <a id="#prueba-rápida"></a>
+
+0. **Obtén tu clave API de pruebas de Shippo** — regístrate gratis y copia tu token *test* desde el panel.  
+   [Guía de autenticación →](https://docs.goshippo.com/docs/guides_general/authentication/)
 
 ```bash
 # 1) Compila y ejecuta la app  ──► elige la plataforma
