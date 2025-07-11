@@ -127,19 +127,15 @@ dotnet build -t:Run -f net9.0-ios
 #    Ejemplo Windows
 dotnet build -t:Run -f net9.0-windows10.0.19041.0
 
-Inicia la aplicación – verás la pantalla Setup.
+```
 
-Pega tu API key test de Shippo y pulsa Save.
-
-Si usas una key compartida puede que ya existan direcciones; en cada dispositivo aún puedes crear hasta 5 direcciones extra (desinstala y reinstala la app para reiniciar el contador).
-
-Cuando tengas al menos dos direcciones, abre Quote Rates:
-
-elige “From” / “To” en los pickers,
-
-pulsa Get Rates para obtener precios de envío en modo test.
-
-(Opcional) cambia entre tema claro / oscuro con el selector flotante.
+2. **Inicia la aplicación** – llegarás a la pantalla **Setup**.  
+3. **Pega tu clave API de pruebas de Shippo** y pulsa **Save**.  
+4. Si utilizas una clave de prueba compartida es posible que ya contenga direcciones; en cada dispositivo **aún puedes crear hasta 5 direcciones adicionales** (desinstala y vuelve a instalar la app para restablecer el límite).  
+5. Cuando existan al menos dos direcciones, **abre _Quote Rates_**:  
+6. **Selecciona** “From” / “To” en los pickers.  
+7. Pulsa **Get Rates** para obtener precios de envío en **modo test** en tiempo real.  
+8. _(Opcional)_ **Cambia el tema** claro/oscuro con el selector en la esquina inferior derecha de la página **Main**.  
 ```
 
 ### 🧩 Stack y arquitectura <a id="#stack-y-arquitectura"></a>
